@@ -12,6 +12,8 @@ const PORT = 3333;
 // create HTTP request handler by calling express() and saving result in variable named app
 const app = express();
 // parse requests
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // serve static assets
 
