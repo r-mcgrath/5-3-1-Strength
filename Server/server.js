@@ -25,6 +25,16 @@ const app = express();
 // TODO: add a route handler that is a catchall for invalid routes (404 error handler)
 
 // global error handler
+app.use((err, req, res, next) => {
+    const defaultError = {
+      log: 'Express error handler caught unknown middleware error',
+      status: 500,
+      message: { err: 'An error occurred' },
+    };
+    const errorObj = Object.assign({}, defaultError, err);
+    console.log(errorObj.log);
+    return res.status(errorObj.status).json(errorObj.message);
+  });
 
 // start server and listen on assigned port
 app.listen(PORT, () => {
