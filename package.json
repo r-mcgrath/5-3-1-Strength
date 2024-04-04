@@ -1,4 +1,13 @@
-{
+{  
+"name": "5-3-1_Strength",
+"version": "1.0.0",
+"description": "",
+"main": "server.js",
+"scripts": {
+  "merge": "node util/merge.js",
+  "start": "node server/server.js",
+  "start-dev": "nodemon server/server.js"
+},
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
