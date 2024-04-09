@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const URI = 'mongodb://localhost:27017';
+//const URI = 'mongodb+srv://rickmcgrath1:Trombone12@cluster0.l6sanky.mongodb.net/';
+const URI = 'mongodb://localhost:27017'
 
 
 mongoose
