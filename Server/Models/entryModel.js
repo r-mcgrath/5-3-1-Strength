@@ -3,7 +3,9 @@ const { Schema } = mongoose;
 
 //const URI = 'mongodb+srv://rickmcgrath1:Trombone12@cluster0.l6sanky.mongodb.net/';
 //const URI = 'mongodb://localhost:27017'
-const URI = 'mongodb://127.0.0.1:27017/test';
+const URI = 'mongodb://127.0.0.1:27017/';
+
+//mongoose.connect('mongodb://127.0.0.1:27017/test', console.log('connected to DB'))
 
 
 mongoose

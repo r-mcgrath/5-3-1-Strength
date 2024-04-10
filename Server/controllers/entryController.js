@@ -1,4 +1,4 @@
-const Entry = require('./models/entryModel');
+const Entry = require('../models/entryModel');
 
 
 const entryController = {};
