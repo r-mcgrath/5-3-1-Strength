@@ -15,7 +15,8 @@ mongoose
   .catch((err) => console.log(err));
 
 const entrySchema = new Schema ({
-  content: { type: String, required: true },
+  lift: { type: String, required: true },
+  reps: { type: Number, required: true},
   create_at: { type: Number, default:  Date.now() }, 
 
 });
