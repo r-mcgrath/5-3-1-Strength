@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 //const mongoose = require('mongoose')
 // require controllers
-//mongoose.connect('mongodb://127.0.0.1:27017/test', console.log('connected to DB'))
+const entryController = require('./controllers/entryController');
 
 // require router
 
