@@ -6,6 +6,7 @@ const path = require('path');
 const entryController = require('./controllers/entryController');
 
 // require router
+const entryRouter = require('./routes/entryRouter');
 
 // set constants
 const PORT = 3333;
@@ -24,8 +25,10 @@ app.use(express.json());
 // serve blog.html file from the views folder to /blog
 
 // route handler for entries
+app.use('/entries', entryRouter);
 
 // TODO: add a route handler that is a catchall for invalid routes (404 error handler)
+app.use('/*', (req, res) => res.sendStatus(404));
 
 // global error handler
 app.use((err, req, res, next) => {
