@@ -18,9 +18,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // serve static assets
-
+app.use(express.static(path.resolve(__dirname, '../assets')));
 // serve the index.html file from the views folder at the root 
-
+app.get('/', (req, res) => {
+  return res.sendFile(path.resolve(__dirname, '../views/index.html' ));
+});
 
 // serve blog.html file from the views folder to /blog
 
