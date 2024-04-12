@@ -17,8 +17,8 @@ mongoose
 
 const entrySchema = new Schema ({
   content: { type: String, required: true },
-  /*weight: {type: Number, required: true},
-  reps: { type: Number, required: true},*/
+  weight: {type: Number, required: true},
+  reps: { type: Number, required: true},
   create_at: { type: Number, default:  Date.now() }, 
 
 });

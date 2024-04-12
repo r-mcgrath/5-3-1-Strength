@@ -5,8 +5,8 @@ const entryController = {};
     
 entryController.postEntry = async (req, res, next) => {
   try{
-    const { content } = req.body;
-    const entry = await Entry.create({ content });
+    const { content, weight, reps } = req.body;
+    const entry = await Entry.create({ content, weight, reps });
     res.locals.entry = entry;
     return next();
   } catch (err) {
