@@ -2,9 +2,9 @@ const authController = {};
 
 authController.verifyUser = (req, res, next) => {
   const { user, pass } = req.body;
-  if ( user === 'codesmith' && pass === 'ilovetesting') {
+  if ( user === 'rick' && pass === 'trombone12') {
     res.cookie('token', 'user');
-  } else if (user === 'codesmith_admin' && pass === 'testingisgreat') {
+  } else if (user === 'rick_admin' && pass === 'iamawebdev') {
     res.cookie('token', 'admin');
   } else {
     return next({
