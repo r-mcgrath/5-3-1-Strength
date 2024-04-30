@@ -24,6 +24,11 @@ app.get('/', (req, res) => {
   return res.sendFile(path.resolve(__dirname, '../views/index.html' ));
 });
 
+app.post('/signin', authController.verifyUser, (req,res) => {
+  res.redirect('/tracker');
+});
+
+
 // serve blog.html file from the views folder to /blog
 
 // route handler for entries
