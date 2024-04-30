@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const entryController = require('../controllers/entryController');
+const authController = require('../controllers/authController');
 
 // route that handles POST requests
 router.post('/', entryController.postEntry, (req, res )=> {
@@ -14,7 +15,7 @@ router.get('/', entryController.getEntries, (req,res) => {
   });
 
   // route that handles DELETE requests
-router.delete('/:id', /*authController.checkCookie,*/ entryController.deleteEntry, (req, res) => {
+router.delete('/:id', authController.checkCookie, entryController.deleteEntry, (req, res) => {
     return res.status(200).json(res.locals.deletedEntry);
   });
   

@@ -1,10 +1,11 @@
 // require libraries
 const express = require('express');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 //const mongoose = require('mongoose')
 // require controllers
 const entryController = require('./controllers/entryController');
-
+const authController = require('./controllers/authController');
 // require router
 const entryRouter = require('./routes/entryRouter');
 
@@ -16,6 +17,7 @@ const app = express();
 // parse requests
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
 
 // serve static assets
 app.use(express.static(path.resolve(__dirname, '../assets')));
@@ -29,7 +31,14 @@ app.post('/signin', authController.verifyUser, (req,res) => {
 });
 
 
-// serve blog.html file from the views folder to /blog
+// serve tracker.html file from the views folder to /blog
+app.get('/tracker', authController.checkCookie, (req, res) => {
+  if (res.locals.isValid) {
+    return res.status(200).sendFile(path.resolve(__dirname, '../views/tracker.html' ));
+  } else {
+    return res.status(401).send('You must be signed in to view this page');
+  }
+});
 
 // route handler for entries
 app.use('/entries', entryRouter);
